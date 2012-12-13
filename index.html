@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AngularJS</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="syntaxhighlighter/shThemeDefault.css" type="text/css">
+    <script src="js/jquery-1.7.min.js"></script>
+    <script src="js/angular-1.0.0rc8.min.js"></script>
+    <script src="js/presentation.js"></script>
+    <script src="syntaxhighlighter/shCore.js"></script>
+    <script src="syntaxhighlighter/shBrushJScript.js"></script>
+    <script src="syntaxhighlighter/shBrushXml.js"></script>
+    <script>SyntaxHighlighter.all();</script>
+  </head>
+  <body ng-app="PresentationModule" ng-controller="PresentationController">
+
+    <div id="intro">
+      <h1>Aplikasi Permohonan<br> Merk</h1>
+      <h2>Akeda Bagus &amp; Bachtiar Rivai</h2>
+      <h3 ng-show="isAfter()">admin@gedex.web.id &amp; bachtiarrv@gmail.com</h3>
+    </div>
+
+    <p id="counter" ng-show="isInsideDeck()">
+      <a href="#/slides/1">&laquo;</a>
+      {{activeSlide + 1}} / {{totalSlides}}
+      <a href="#/slides/{{totalSlides}}">&raquo;</a>
+    </p>
+
+    <deck current="activeSlide" total="totalSlides">
+      <!--
+        * Outline
+      -->
+      <slide>
+        <h2>Outline</h2>
+        <ul>
+          <li>Proposed Technology Stack
+          <li>Proposed Development Workflow
+          <li>Captured Modules
+          <li>Proposed Timeline
+        </ul>
+      </slide>
+
+      <!--
+        * Technology Stack
+      -->
+      <slide>
+        <h2>Proposed Technology Stack</h2>
+        <ul>
+          <li>CakePHP
+          <li>MySQL
+          <li>Bootstrap
+          <li>jQuery &amp; AngularJS
+        </ul>
+      </slide>
+
+      <!--
+        * Proposed Development Workflow
+      -->
+      <slide>
+        <h2>Proposed Project Workflow</h2>
+        <ol>
+          <li>Requirement Gathering
+          <li>Frontend Iteration
+          <li>Versioned Code using Git
+          <li>Staging Deployment
+          <li>QA
+          <li>Production Deployment
+        </ol>
+      </slide>
+
+      <!--
+        * Captured Modules
+      -->
+      <slide>
+        <h2>Captured Modules</h2>
+        <ul>
+          <li>Users/Groups (for authorization)
+          <li>Master Data (referencial data)
+          <li><strong>Projects / Orders</strong>
+          <li>Reporting
+        </ul>
+      </slide>
+
+      <!--
+        * Captured Modules > Users/Groups
+      -->
+      <slide>
+        <h2>Captured Modules &raquo; <strong>Users/Groups</strong></h2>
+        <p>
+          A user belongs to a group.
+          Group can be <strong>order verificator</strong>,
+          <strong>approval</strong>,<strong>attorney</strong>,<strong>admin</strong>, etc..
+        </p>
+        <hr>
+        <p>Each group or user is authorized to do particular actions</p>
+      </slide>
+
+      <!--
+        * Captured Modules > Master Data
+      -->
+      <slide>
+        <h2>Captured Modules &raquo; <strong>Master Data</strong></h2>
+
+        <ul>
+          <li>Clients
+          <li>Pricing
+          <li>Review Points
+          <li>Tags / Keywords
+              (<em>to tag goods / services of requested trademark</em>)
+          <li>etc</li>
+        </ul>
+      </slide>
+
+      <!--
+        * Captured Modules > Projects / Orders
+      -->
+      <slide>
+        <h2>Captured Modules &raquo; <strong>Orders</strong></h2>
+        <ol>
+          <li>Fill client info into master data if not exists
+          <li>Verify the order completeness by user with role <strong>verificator</strong>
+          <li>Approval by user with role <strong>approver</strong>
+          <li>Attach any associated media (pdf, image, etc)
+          <li>More..
+        </ol>
+      </slide>
+
+      <!--
+        * Captured Modules > Projects / Orders
+      -->
+      <slide>
+        <h2>Captured Modules &raquo; <strong>Orders</strong> &raquo; More...</h2>
+        <ul>
+          <li>Order states changed based on completion of actions
+          <li>Todo List for current order
+          <li>Calendar for current order
+          <li>Generated document based on the state such as
+              Published statement to client or invoice.
+        </ul>
+      </slide>
+
+      <!--
+        * Reporting
+      -->
+      <slide>
+        <h2>Captured Modules &raquo; <strong>Reporting</strong></h2>
+        <ul>
+          <li>Any summary that can be queried from order, master data, and user/groups
+          <li>i.e: Progress order whether daily, monthly, or yearly
+          <li>List clients with number of orders
+          <li>Aging invoice
+          <li>etc
+        </ul>
+      </slide>
+
+      <slide>
+        <h2>Proposed Timeline</h2>
+        <ul>
+          <li>Requirement Gathering (<strong>4 Weeks</strong>)
+          <li>Frontend iteration (<strong>2 Weeks</strong>)
+          <li>User/Group Module (<strong>1 Week</strong>)
+          <li>Project/Order Module (<strong>4 Weeks</strong>)
+          <li>Report Module (<strong>1 Week</strong>)
+        </ul>
+      </slide>
+
+      <slide class="interlude">
+        <h2></h2>
+        <h3>
+          The End
+        </h3>
+      </slide>
+
+    </deck>
+
+  </body>
+</html>
